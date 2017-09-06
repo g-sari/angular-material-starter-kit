@@ -1,0 +1,33 @@
+@import '../../../shared/styles/variables.scss';
+
+.header {
+
+  min-height: $header-height;
+  max-height: $header-height;
+  height: $header-height;
+
+  .mat-toolbar {
+    min-height: $header-height;
+    max-height: $header-height;
+    height: $header-height;
+  }
+
+  .content {
+    height:112px;
+  }
+
+  .logo {
+    color: #ffffff;
+    height: 50px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  anms-big-input {
+    width: 100%;
+  }
+}
+
+

@@ -1,0 +1,41 @@
+@import '../typography.scss';
+@import 'variables.theme.scss';
+
+$oas-dark-primary: mat-palette($mat-grey, 800);
+$oas-dark-accent: mat-palette($mat-green, A700);
+$oas-dark-warn: mat-palette($mat-red, A700);
+
+$oas-dark-theme: mat-dark-theme(
+    $oas-dark-primary,
+    $oas-dark-accent,
+    $oas-dark-warn
+);
+
+.dark-theme {
+
+  // Components
+  @import 'components/buttons.theme.scss';
+  @import 'components/toolbar.theme.scss';
+  @import 'components/select.theme.scss';
+  @import 'components/sidenav.theme.scss';
+  @import '../../../shared/components/big-input/big-input.component.scss-theme';
+
+
+  @include anms-big-input-component-theme($oas-dark-theme);
+
+
+  // MAIN STYLES
+  background-color: #303030;
+  font-family: Roboto-Regular;
+  color: $theme-color-font-primary;
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: $theme-font-size-h1;
+  }
+
+}

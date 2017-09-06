@@ -1,0 +1,18 @@
+import {Injectable} from '@angular/core';
+import {Subject}    from 'rxjs/Subject';
+
+@Injectable()
+export class YoutubeInteractionService {
+
+  public query:string;
+
+  // Observable string sources
+  private searchVideosSource = new Subject<string>();
+
+  // Observable string streams
+  searchVideosPublished$ = this.searchVideosSource.asObservable();
+
+  searchVideos(query: string) {
+    this.searchVideosSource.next(query);
+  }
+}
