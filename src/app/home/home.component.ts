@@ -1,5 +1,4 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Subscription} from "rxjs";
 import {Video} from "../shared/youtube/video.model";
 import {VideoCategory} from "../shared/youtube/video-category.model";
 import {YoutubeAPIService} from "../shared/youtube/youtube-api.service";
@@ -12,10 +11,8 @@ import {YoutubeInteractionService} from "../shared/youtube/youtube-interaction.s
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  private subscription: Subscription;
   private regionCode: string = "US";
   public swiperList: Video[] = [];
-  public videoList: Video[] = [];
   public videoCategories: VideoCategory[] = [];
   public animationOnComponentEnter = 'route-enter-staggered';
   public swiperConfig: SwiperOptions = {
@@ -31,11 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   };
 
   constructor(private youtubeAPIService: YoutubeAPIService, private youtubeInteractionService: YoutubeInteractionService) {
-    this.subscription = youtubeInteractionService.searchVideosPublished$.subscribe(
-      (data) => this.searchYoutubeVideos(data),
-      (err) => console.log(err),
-      () => console.log('Completed')
-    );
+
   }
 
   ngOnInit() {
@@ -70,27 +63,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // prevent memory leak when component destroyed
-    this.subscription.unsubscribe();
-  }
-
-  private searchYoutubeVideos(query: string) {
-    this.youtubeAPIService.searchVideos(query)
-      .subscribe(data => {
-        this.videoList = data.items.map(item => {
-          return new Video(
-            item.id.videoId,
-            item.snippet.title,
-            item.snippet.thumbnails.medium.url,
-            item.snippet.thumbnails.high.url,
-            item.snippet.channelTitle,
-            item.snippet.channelId,
-            item.snippet.publishedAt,
-            item.snippet.description,
-            null,
-            null)
-        });
-      });
   }
 
   private getVideosByCategory() {

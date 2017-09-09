@@ -6,10 +6,12 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 })
 export class YoutubeSafeUrlPipe implements PipeTransform {
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer) {
+  }
 
   transform(videoId: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/${videoId}?autoplay=1");
+    let videoUrl = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+    return this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
   }
 
 }

@@ -3,7 +3,7 @@ import {routerTransition} from "./core/layout/router.animations";
 import {MdSidenav} from "@angular/material";
 
 @Component({
-  selector: 'rms-embedded-oas',
+  selector: 'angular-material-starter-kit',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [routerTransition]

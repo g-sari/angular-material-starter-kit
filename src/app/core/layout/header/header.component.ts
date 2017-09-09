@@ -1,8 +1,6 @@
 import {Component, OnInit, EventEmitter, Output, OnDestroy} from '@angular/core';
 import {NavLink} from "../navigation-link";
-import {MdIconRegistry} from "@angular/material";
-import {DomSanitizer} from "@angular/platform-browser";
-import {YoutubeInteractionService} from "../../../shared/youtube/youtube-interaction.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -21,9 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public sidenavToggleEvent: EventEmitter<string> = new EventEmitter();
   public searchQuery: string = '';
 
-  constructor(mdIconRegistry: MdIconRegistry, sanitizer: DomSanitizer, private youtubeInteractionService: YoutubeInteractionService) {
-    mdIconRegistry.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('assets/images/logo2.svg'));
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
@@ -40,7 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onSearch() {
-    this.youtubeInteractionService.searchVideos(this.searchQuery);
+    this.router.navigate(['/search'], { queryParams: { query: this.searchQuery } });
   }
 
   onSearchReset() {

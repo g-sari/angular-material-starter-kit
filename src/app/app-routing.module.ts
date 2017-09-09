@@ -13,7 +13,8 @@ import {YoutubePlayerComponent} from "./youtube-player/youtube-player.component"
 const APP_ROUTES: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', loadChildren: './home/home.module#HomeModule'},
-  {path: 'video/:id', component: YoutubePlayerComponent, children: [], canActivate: []}
+  {path: 'video/:id', component: YoutubePlayerComponent, children: [], canActivate: []},
+  {path: 'search', loadChildren: './search/search.module#SearchModule'},
 ];
 
 export const APP_ROUTING_MODULE: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES, {

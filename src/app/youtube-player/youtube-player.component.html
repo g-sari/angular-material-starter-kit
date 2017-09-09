@@ -5,7 +5,7 @@
         <div fxLayout="row" fxFlex="70" fxLayoutAlign="start start" class="embed-container">
           <div fxLayout="column" fxFlex="100" fxLayoutAlign="start stretch">
             <div *ngIf="video">
-              <iframe width="560" height="315" frameborder="0" allowfullscreen [src]="video.videoId | youtubeSafeUrl"></iframe>
+              <iframe width="560" height="315" frameborder="0" allowfullscreen [src]="video?.videoId | youtubeSafeUrl"></iframe>
             </div>
           </div>
         </div>

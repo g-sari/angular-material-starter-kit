@@ -2,9 +2,7 @@
 
   <md-sidenav-container>
 
-    <oas-header
-      (sidenavToggleEvent)="onSidenavToggleEvent($event)"
-      (youtubeSearchVideosEvent)="onYoutubeSearchVideosEvent($event)"></oas-header>
+    <oas-header (sidenavToggleEvent)="onSidenavToggleEvent($event)"></oas-header>
 
     <div class="content" [@routerTransition]="routeroutlet.isActivated && routeroutlet.activatedRoute.routeConfig.path">
       <router-outlet #routeroutlet="outlet"></router-outlet>

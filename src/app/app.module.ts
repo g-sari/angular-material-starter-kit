@@ -3,13 +3,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-
 import {AppComponent} from './app.component';
 import {APP_ROUTING_MODULE} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CoreModule} from "./core/core.module";
 import {RouterModule} from "@angular/router";
-import {MdSidenavModule, MdTabsModule, MdCardModule} from "@angular/material";
+import {MdSidenavModule, MdCardModule} from "@angular/material";
 import {SettingsSidenavModule} from "./core/layout/sidenavs/settings-sidenav/settings-sidenav.module";
 import {YoutubePlayerComponent} from "./youtube-player/youtube-player.component";
 import {YoutubeSafeUrlPipe} from "./shared/youtube/YoutubeSafeUrlPipe";
@@ -34,7 +33,10 @@ import {YoutubeInteractionService} from "./shared/youtube/youtube-interaction.se
     MdCardModule,
     SettingsSidenavModule,
   ],
-  providers: [YoutubeAPIService, YoutubeInteractionService],
+  providers: [
+    YoutubeAPIService,
+    YoutubeInteractionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

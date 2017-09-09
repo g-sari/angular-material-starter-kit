@@ -15,13 +15,13 @@
   <md-toolbar>{{videoCategory.title}}</md-toolbar>
   <md-grid-list cols="3" rowHeight="1:1">
     <md-grid-tile *ngFor="let video of videoCategory.videos">
-      <md-card [routerLink]="['/video', video.videoId]">
+      <md-card>
         <md-card-header>
           <md-card-title class="youtube-video-title">{{video.title}}</md-card-title>
           <md-card-subtitle>{{video.channelTitle}}</md-card-subtitle>
         </md-card-header>
         <md-card-content>
-          <img class="youtube-video-image" [src]="video.thumbnailUrlMedium">
+          <a [routerLink]="['/video', video.videoId]"><img class="youtube-video-image" [src]="video.thumbnailUrlMedium"></a>
           <p>
             Views: {{video.statisticViewCount}} | Duration: {{video.duration}}
           </p>

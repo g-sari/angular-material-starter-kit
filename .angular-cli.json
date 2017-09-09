@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "rms-embedded-oas"
+    "name": "angular-material-starter-kit"
   },
   "apps": [
     {
@@ -21,7 +21,6 @@
       "styles": [
         "styles.scss",
         "app/core/styles/themes/themes.scss",
-        "../node_modules/flag-icon-css/css/flag-icon.css",
         "../node_modules/swiper/dist/css/swiper.css"
       ],
       "scripts": [],

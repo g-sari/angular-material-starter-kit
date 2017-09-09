@@ -1,6 +1,8 @@
+@import 'responsive-breakpoints.scss';
+
 // MAIN STYLES
 $background-color-oas: #000000;
-$header-height: 112px;
+$header-height: 14vh;
 $footer-height: 100px;
 
 
@@ -12,4 +14,5 @@ $font-color-primary: #ffffff;
 $h1-font-size: 3.0vw;
 $h2-font-size: 2.0vw;
 $p-font-size: 3vmin;
+
 

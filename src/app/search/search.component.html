@@ -1,0 +1,28 @@
+<md-paginator [length]="videoList.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event"></md-paginator>
+<md-grid-list cols="2" rowHeight="3:1">
+  <md-grid-tile *ngFor="let video of videoList | slice: paginationFrom(pageEvent) : paginationTo(pageEvent)">
+    <md-card class="search-card" ngClass="animationOnComponentEnter">
+      <md-card-content>
+        <md-card-title-group>
+          <md-card-title>
+            <span class="search-video-title">
+              <a [routerLink]="['/video', video.videoId]">{{video.title}}</a>
+            </span>
+          </md-card-title>
+          <md-card-subtitle>
+            <span class="search-video-channel">
+              <a [routerLink]="['/video', video.videoId]">{{video.channelTitle}}</a>
+            </span>
+            <br />
+            <span>
+              <a class="search-video-description" [routerLink]="['/video', video.videoId]">{{video.description}}</a>
+            </span>
+          </md-card-subtitle>
+          <a [routerLink]="['/video', video.videoId]">
+            <img class="search-image" [src]="video.thumbnailUrlMedium">
+          </a>
+        </md-card-title-group>
+      </md-card-content>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>

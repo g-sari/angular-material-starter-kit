@@ -4,8 +4,6 @@ import {Subject}    from 'rxjs/Subject';
 @Injectable()
 export class YoutubeInteractionService {
 
-  public query:string;
-
   // Observable string sources
   private searchVideosSource = new Subject<string>();
 
