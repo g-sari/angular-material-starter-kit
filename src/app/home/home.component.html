@@ -1,7 +1,7 @@
 <swiper [config]="swiperConfig">
   <div class="swiper-wrapper">
     <div class="swiper-slide" *ngFor="let video of swiperList">
-      <button md-raised-button [routerLink]="['/video', video.videoId]"><img [src]="video.thumbnailUrlHigh"></button>
+      <a [routerLink]="['/video', video.videoId]"><img [src]="video.thumbnailUrlHigh"></a>
     </div>
   </div>
   <!-- Add Pagination -->
@@ -10,23 +10,19 @@
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
 </swiper>
-
 <div *ngFor="let videoCategory of videoCategories">
   <md-toolbar>{{videoCategory.title}}</md-toolbar>
-  <md-grid-list cols="3" rowHeight="1:1">
-    <md-grid-tile *ngFor="let video of videoCategory.videos">
-      <md-card>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="videos-container">
+      <md-card *ngFor="let video of videoCategory.videos" class="video-item">
         <md-card-header>
           <md-card-title class="youtube-video-title">{{video.title}}</md-card-title>
           <md-card-subtitle>{{video.channelTitle}}</md-card-subtitle>
         </md-card-header>
         <md-card-content>
           <a [routerLink]="['/video', video.videoId]"><img class="youtube-video-image" [src]="video.thumbnailUrlMedium"></a>
-          <p>
-            Views: {{video.statisticViewCount}} | Duration: {{video.duration}}
-          </p>
+          <p>Views: {{video.statisticViewCount}} | Duration: {{video.duration}}</p>
         </md-card-content>
       </md-card>
-    </md-grid-tile>
-  </md-grid-list>
+    </div>
+
 </div>

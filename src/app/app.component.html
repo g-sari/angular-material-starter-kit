@@ -1,4 +1,6 @@
-<div class="wrapper" [class.dark-theme]="true">
+<div class="wrapper" [class.dark-theme]="darkTheme" [class.light-theme]="lightTheme">
+
+  <md-progress-bar *ngIf="showProgressBar" color="warn" mode="indeterminate"></md-progress-bar>
 
   <md-sidenav-container>
 
@@ -8,11 +10,11 @@
       <router-outlet #routeroutlet="outlet"></router-outlet>
     </div>
 
-    <md-sidenav #sidenav mode="over" align="start" class="sidenav"> <!-- modes = {side, over, push} -->
+    <md-sidenav #sidenav mode="push" align="start" class="sidenav"> <!-- modes = {side, over, push} -->
       <oas-settings-sidenav></oas-settings-sidenav>
     </md-sidenav>
 
-    <!-- <oas-footer></oas-footer> -->
+    <oas-footer></oas-footer>
   </md-sidenav-container>
 </div>
 

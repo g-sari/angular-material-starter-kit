@@ -20,15 +20,25 @@ export class HomeComponent implements OnInit, OnDestroy {
     paginationClickable: true,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
-    spaceBetween: 50,
+    spaceBetween: 0,
     centeredSlides: true,
-    slidesPerView: 3,
+    slidesPerView: 5,
     direction: 'horizontal',
-    keyboardControl: true
+    keyboardControl: true,
+    loop: true,
+    autoplay: 1,
+    breakpoints: {
+      512: {slidesPerView: 1}, // when window width is <= 512px
+      1024: {slidesPerView: 2},
+      1440: {slidesPerView: 3},
+      1920: {slidesPerView: 4},
+      2560: {slidesPerView: 5},
+      3560: {slidesPerView: 6},
+      4560: {slidesPerView: 7}
+    }
   };
 
   constructor(private youtubeAPIService: YoutubeAPIService, private youtubeInteractionService: YoutubeInteractionService) {
-
   }
 
   ngOnInit() {

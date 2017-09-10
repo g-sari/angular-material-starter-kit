@@ -3,7 +3,7 @@ import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {
   MdToolbarModule, MdButtonModule, MdPaginatorModule, MdIconRegistry, MdIconModule,
-  MdTabsModule, MdInputModule, MdFormField, MdFormFieldModule, MdCardModule, MdTooltipModule
+  MdTabsModule, MdInputModule, MdFormFieldModule, MdCardModule, MdTooltipModule, MdMenuModule
 } from "@angular/material";
 import {RouterModule} from "@angular/router";
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -24,7 +24,8 @@ import {BigInputActionComponent} from "../../shared/components/big-input/big-inp
     MdFormFieldModule,
     MdCardModule,
     MdInputModule,
-    MdTooltipModule
+    MdTooltipModule,
+    MdMenuModule
   ],
   declarations: [
     HeaderComponent,

@@ -8,12 +8,13 @@ import {APP_ROUTING_MODULE} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CoreModule} from "./core/core.module";
 import {RouterModule} from "@angular/router";
-import {MdSidenavModule, MdCardModule} from "@angular/material";
+import {MdSidenavModule, MdCardModule, MdProgressBarModule} from "@angular/material";
 import {SettingsSidenavModule} from "./core/layout/sidenavs/settings-sidenav/settings-sidenav.module";
 import {YoutubePlayerComponent} from "./youtube-player/youtube-player.component";
 import {YoutubeSafeUrlPipe} from "./shared/youtube/YoutubeSafeUrlPipe";
 import {YoutubeAPIService} from "./shared/youtube/youtube-api.service";
 import {YoutubeInteractionService} from "./shared/youtube/youtube-interaction.service";
+import {Ng2Webstorage} from "ngx-webstorage";
 
 @NgModule({
   declarations: [
@@ -28,10 +29,12 @@ import {YoutubeInteractionService} from "./shared/youtube/youtube-interaction.se
     FormsModule,
     HttpModule,
     APP_ROUTING_MODULE,
+    Ng2Webstorage,
     RouterModule,
     MdSidenavModule,
     MdCardModule,
     SettingsSidenavModule,
+    MdProgressBarModule
   ],
   providers: [
     YoutubeAPIService,

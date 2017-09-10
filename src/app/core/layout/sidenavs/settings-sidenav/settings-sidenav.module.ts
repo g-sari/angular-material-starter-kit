@@ -2,21 +2,26 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {
   MdButtonModule, MdTabsModule, MdListModule, MdSlideToggleModule, MdToolbar,
-  MdToolbarModule, MdSelectModule
+  MdToolbarModule, MdSelectModule, MdDatepickerModule, MdNativeDateModule, MdInputModule
 } from "@angular/material";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {SettingsSidenavComponent} from "./settings-sidenav.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     MdToolbarModule,
     MdTabsModule,
     MdButtonModule,
     MdListModule,
     MdSlideToggleModule,
-    MdSelectModule
+    MdSelectModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
+    MdInputModule
   ],
   declarations: [
     SettingsSidenavComponent
