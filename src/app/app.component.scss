@@ -12,8 +12,8 @@
       flex: 1 0 auto;
       position: relative;
       overflow: scroll;
-      height: calc(100vh - #{$header-height}); // - #{$footer-height}
-      // margin-bottom: $footer-height;
+      height: calc(100vh - #{$header-height}) - #{$footer-height};
+      margin-bottom: $footer-height;
     }
 
     md-sidenav {

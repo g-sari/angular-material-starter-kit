@@ -1,5 +1,5 @@
 @import '../typography.scss';
-@import 'variables.theme.scss';
+@import '../common.scss';
 
 $oas-primary: mat-palette($mat-indigo, 800, 300, 900);
 $oas-accent: mat-palette($mat-light-blue);
@@ -10,3 +10,7 @@ $oas-theme: mat-light-theme(
     $oas-accent,
     $oas-warn
 );
+
+a {
+  color: #000000;
+}

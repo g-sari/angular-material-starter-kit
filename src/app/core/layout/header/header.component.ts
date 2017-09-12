@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public navLinks: NavLink[] = [
     {label: "HOME", path: ""},
     {label: "CHANNELS", path: "channels"},
-    {label: "SEARCH", path: "/search"}
+    {label: "CREDITS", path: "/credits"}
   ];
   @Output()
   public sidenavToggleEvent: EventEmitter<string> = new EventEmitter();
