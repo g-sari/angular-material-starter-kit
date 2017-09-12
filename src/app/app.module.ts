@@ -8,19 +8,21 @@ import {APP_ROUTING_MODULE} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CoreModule} from "./core/core.module";
 import {RouterModule} from "@angular/router";
-import {MdSidenavModule, MdCardModule, MdProgressBarModule} from "@angular/material";
+import {MdSidenavModule, MdCardModule, MdProgressBarModule, MdIconModule} from "@angular/material";
 import {SettingsSidenavModule} from "./core/layout/sidenavs/settings-sidenav/settings-sidenav.module";
 import {YoutubePlayerComponent} from "./youtube-player/youtube-player.component";
 import {YoutubeSafeUrlPipe} from "./shared/youtube/YoutubeSafeUrlPipe";
 import {YoutubeAPIService} from "./shared/youtube/youtube-api.service";
 import {YoutubeInteractionService} from "./shared/youtube/youtube-interaction.service";
 import {Ng2Webstorage} from "ngx-webstorage";
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     YoutubePlayerComponent,
-    YoutubeSafeUrlPipe
+    YoutubeSafeUrlPipe,
+    CreditsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import {Ng2Webstorage} from "ngx-webstorage";
     RouterModule,
     MdSidenavModule,
     MdCardModule,
+    MdIconModule,
     SettingsSidenavModule,
     MdProgressBarModule
   ],

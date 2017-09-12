@@ -11,14 +11,8 @@
                 </button>
               </div>
               <div fxLayout="row" fxFlex="50" fxLayoutAlign="center center">
-                <anms-big-input placeholder="Search videos, games and channels"
-                                [value]="searchQuery"
-                                (keyup)="onSearchChange($event.target.value)"
-                                (keyup.enter)="onSearch()"
-                                (keyup.escape)="onSearchReset()">
-                  <anms-big-input-action icon="delete_forever" color="warn"
-                                         (action)="onSearchReset()"
-                                         mdTooltip="Reset" mdTooltipPosition="after">
+                <anms-big-input placeholder="Search videos, games and channels" [value]="searchQuery" (keyup)="onSearchChange($event.target.value)" (keyup.enter)="onSearch()" (keyup.escape)="onSearchReset()">
+                  <anms-big-input-action icon="cancel" color="warn" (action)="onSearchReset()" mdTooltip="Reset" mdTooltipPosition="after">
                   </anms-big-input-action>
                 </anms-big-input>
               </div>

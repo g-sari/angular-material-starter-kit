@@ -1,5 +1,4 @@
 @import '../typography.scss';
-@import '../common.scss';
 
 $oas-dark-primary: mat-palette($mat-grey, 800);
 $oas-dark-accent: mat-palette($mat-green, A700);
@@ -13,25 +12,11 @@ $oas-dark-theme: mat-dark-theme(
 
 .dark-theme {
 
-  // Components
-  @import 'components/buttons.theme.scss';
-  @import 'components/toolbar.theme.scss';
-  @import 'components/select.theme.scss';
-  @import 'components/sidenav.theme.scss';
-  @import '../../../shared/components/big-input/big-input.component.scss-theme';
-
-
+  @import '../common.scss';
   @include anms-big-input-component-theme($oas-dark-theme);
-
-
-  // MAIN STYLES
-  background-color: #303030;
-  font-family: Roboto-Regular;
-  color: $theme-color-font-primary;
 
   a {
     color: #ffffff;
   }
-
 
 }

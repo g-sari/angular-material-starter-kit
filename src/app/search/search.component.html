@@ -15,9 +15,12 @@
       <a [routerLink]="['/video', video.videoId]"><img class="search-image" [src]="video.thumbnailUrlHigh"></a>
     </md-card-title-group>
     <md-card-actions>
-      <span class="search-video-channel">
-        <a [routerLink]="['/video', video.videoId]">{{video.channelTitle}}</a>
-      </span>
+      <md-chip-list>
+        <md-chip color="warn" selected="true">
+          <span class="search-video-channel"><a [routerLink]="['/video', video.videoId]">Channel: {{video.channelTitle}}</a></span>
+        </md-chip>
+        <md-chip color="accent" selected="true"><span class="search-video-channel">{{video.publishedAt}}</span></md-chip>
+      </md-chip-list>
     </md-card-actions>
   </md-card-content>
 </md-card>

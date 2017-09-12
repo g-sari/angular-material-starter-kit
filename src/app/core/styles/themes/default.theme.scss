@@ -11,6 +11,13 @@ $oas-theme: mat-light-theme(
     $oas-warn
 );
 
-a {
-  color: #000000;
+.default-theme {
+
+  @import '../common.scss';
+  @include anms-big-input-component-theme($oas-theme);
+
+  a {
+    color: #000000;
+  }
+
 }

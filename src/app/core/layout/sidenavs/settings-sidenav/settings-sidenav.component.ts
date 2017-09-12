@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LocalStorage} from "ngx-webstorage";
+import {MdSnackBar} from "@angular/material";
 
 @Component({
   selector: 'oas-settings-sidenav',
@@ -18,7 +19,8 @@ export class SettingsSidenavComponent implements OnInit {
   @LocalStorage()
   private darkTheme: boolean;
 
-  constructor() {
+  constructor(public snackBar: MdSnackBar) {
+    this.openSnackBar("Welcome to the Angular material starter kit!" , "Okey")
   }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class SettingsSidenavComponent implements OnInit {
     }
   }
 
-  changeTheme() {
+  public changeTheme() {
     if (this.selectedTheme == "0") {
       this.lightTheme = false;
       this.darkTheme = false;
@@ -42,6 +44,12 @@ export class SettingsSidenavComponent implements OnInit {
       this.lightTheme = true;
       this.darkTheme = false;
     }
+  }
+
+  public openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 0,
+    });
   }
 
 }

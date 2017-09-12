@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public navLinks: NavLink[] = [
     {label: "HOME", path: ""},
-    {label: "CHANNELS", path: "channels"},
     {label: "CREDITS", path: "/credits"}
   ];
   @Output()

@@ -1,5 +1,19 @@
 @import 'themes/variables.theme.scss';
 
+// Components
+@import 'themes/components/buttons.theme.scss';
+@import 'themes/components/toolbar.theme.scss';
+@import 'themes/components/select.theme.scss';
+@import 'themes/components/sidenav.theme.scss';
+@import '../../shared/components/big-input/big-input.component.scss-theme';
+
+body {
+  // MAIN STYLES
+  background-color: #303030;
+  font-family: Roboto-Regular;
+  color: $theme-color-font-primary;
+}
+
 .example-fill-remaining-space {
   // This fills the remaining space, by using flexbox.
   // Every toolbar row uses a flexbox row layout.

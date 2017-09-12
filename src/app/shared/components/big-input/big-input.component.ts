@@ -9,10 +9,8 @@ export class BigInputComponent {
 
 
   @Input() placeholder: string;
-
   @Input() value = '';
   @Input() disabled = false;
-
   hasFocus = false;
 
 }
