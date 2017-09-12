@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+## Welcome to Angular Material Starter kit
 
-You can use the [editor on GitHub](https://github.com/g-sari/angular-material-starter-kit/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Features
+Responsive design
+Multiple themes and theming support
+Header and sticky footer support
+Angular lazy loaded modules
+Side navigation
+Swiper touch slider support
+Youtube API: Search and watch youtube videos
+Angular Flex-Layout
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Live demo
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Installation
+If you don’t have already installed Node.js and angular-cli, follow following instructions.
+Install Node.js for your operating system from the following link:
+https://nodejs.org/en/
 
-```markdown
-Syntax highlighted code block
+To check if Node.js is installed successfull and open a terminal and type:
+npm -version
+You should see a version number like 3.10.10.
 
-# Header 1
-## Header 2
-### Header 3
+To install angular-cli, execute the following command in your terminal:
+npm install -g @angular/cli
+To check if angular-cli is installed successfully, just type after the installation
+ng --version
+Install required dependencies for the project
+Open a terminal and navigate to the project root folder and type
+npm install
 
-- Bulleted
-- List
+## How to run the application
+To start the application open a terminal navigate to the project root folder and type
+ng serve
+The application should now run on http://localhost:4200
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/g-sari/angular-material-starter-kit/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Documentation
+For more documentation take a look into the documentation folder.
