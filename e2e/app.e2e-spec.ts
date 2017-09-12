@@ -1,6 +1,6 @@
 import { RmsOasPage } from './app.po';
 
-describe('rms-oas App', () => {
+describe('angular-material-starter-kit App', () => {
   let page: RmsOasPage;
 
   beforeEach(() => {

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>rms-embedded-oas documentation</title>
+        <title>angular-material-starter-kit documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">rms-embedded-oas documentation</a>
+            <a href="../" class="navbar-brand">angular-material-starter-kit documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -26,7 +26,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="../index.html">rms-embedded-oas documentation</a>
+                        <a href="../index.html">angular-material-starter-kit documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -110,6 +110,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/BigInputComponent.html" >BigInputComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CreditsComponent.html" >CreditsComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/FooterComponent.html" >FooterComponent</a>
@@ -258,7 +261,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="../index.html">rms-embedded-oas documentation</a>
+                               <a href="../index.html">angular-material-starter-kit documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -345,6 +348,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/BigInputComponent.html" >BigInputComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CreditsComponent.html" >CreditsComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/FooterComponent.html" >FooterComponent</a>
@@ -634,7 +640,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/home/home.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/home/home.component.ts:39</a></div>
                                 </td>
                             </tr>
     
@@ -706,7 +712,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/home/home.component.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/home/home.component.ts:78</a></div>
                                 </td>
                             </tr>
     
@@ -738,7 +744,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/home/home.component.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/home/home.component.ts:75</a></div>
                                 </td>
                             </tr>
     
@@ -770,7 +776,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/home/home.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/home/home.component.ts:44</a></div>
                                 </td>
                             </tr>
     
@@ -968,15 +974,25 @@ export class HomeComponent implements OnInit, OnDestroy {
     paginationClickable: true,
     nextButton: &#x27;.swiper-button-next&#x27;,
     prevButton: &#x27;.swiper-button-prev&#x27;,
-    spaceBetween: 50,
+    spaceBetween: 0,
     centeredSlides: true,
-    slidesPerView: 3,
+    slidesPerView: 5,
     direction: &#x27;horizontal&#x27;,
-    keyboardControl: true
+    keyboardControl: true,
+    loop: true,
+    autoplay: 1,
+    breakpoints: {
+      512: {slidesPerView: 1}, // when window width is &lt;&#x3D; 512px
+      1024: {slidesPerView: 2},
+      1440: {slidesPerView: 3},
+      1920: {slidesPerView: 4},
+      2560: {slidesPerView: 5},
+      3560: {slidesPerView: 6},
+      4560: {slidesPerView: 7}
+    }
   };
 
   constructor(private youtubeAPIService: YoutubeAPIService, private youtubeInteractionService: YoutubeInteractionService) {
-
   }
 
   ngOnInit() {
@@ -1044,7 +1060,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         <pre class="line-numbers"><code class="language-html">&lt;swiper [config]&#x3D;&quot;swiperConfig&quot;&gt;
   &lt;div class&#x3D;&quot;swiper-wrapper&quot;&gt;
     &lt;div class&#x3D;&quot;swiper-slide&quot; *ngFor&#x3D;&quot;let video of swiperList&quot;&gt;
-      &lt;button md-raised-button [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;&lt;img [src]&#x3D;&quot;video.thumbnailUrlHigh&quot;&gt;&lt;/button&gt;
+      &lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;&lt;img [src]&#x3D;&quot;video.thumbnailUrlHigh&quot;&gt;&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;!-- Add Pagination --&gt;
@@ -1053,25 +1069,21 @@ export class HomeComponent implements OnInit, OnDestroy {
   &lt;div class&#x3D;&quot;swiper-button-next&quot;&gt;&lt;/div&gt;
   &lt;div class&#x3D;&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;
 &lt;/swiper&gt;
-
 &lt;div *ngFor&#x3D;&quot;let videoCategory of videoCategories&quot;&gt;
   &lt;md-toolbar&gt;{{videoCategory.title}}&lt;/md-toolbar&gt;
-  &lt;md-grid-list cols&#x3D;&quot;3&quot; rowHeight&#x3D;&quot;1:1&quot;&gt;
-    &lt;md-grid-tile *ngFor&#x3D;&quot;let video of videoCategory.videos&quot;&gt;
-      &lt;md-card&gt;
+    &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot; class&#x3D;&quot;videos-container&quot;&gt;
+      &lt;md-card *ngFor&#x3D;&quot;let video of videoCategory.videos&quot; class&#x3D;&quot;video-item&quot;&gt;
         &lt;md-card-header&gt;
           &lt;md-card-title class&#x3D;&quot;youtube-video-title&quot;&gt;{{video.title}}&lt;/md-card-title&gt;
           &lt;md-card-subtitle&gt;{{video.channelTitle}}&lt;/md-card-subtitle&gt;
         &lt;/md-card-header&gt;
         &lt;md-card-content&gt;
           &lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;&lt;img class&#x3D;&quot;youtube-video-image&quot; [src]&#x3D;&quot;video.thumbnailUrlMedium&quot;&gt;&lt;/a&gt;
-          &lt;p&gt;
-            Views: {{video.statisticViewCount}} | Duration: {{video.duration}}
-          &lt;/p&gt;
+          &lt;p&gt;Views: {{video.statisticViewCount}} | Duration: {{video.duration}}&lt;/p&gt;
         &lt;/md-card-content&gt;
       &lt;/md-card&gt;
-    &lt;/md-grid-tile&gt;
-  &lt;/md-grid-list&gt;
+    &lt;/div&gt;
+
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -1099,8 +1111,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><swiper [config]="swiperConfig">  <div class="swiper-wrapper">    <div class="swiper-slide" *ngFor="let video of swiperList">      <button md-raised-button [routerLink]="[\'/video\', video.videoId]"><img [src]="video.thumbnailUrlHigh"></button>    </div>  </div>  <!-- Add Pagination -->  <div class="swiper-pagination"></div>  <!-- Add Arrows -->  <div class="swiper-button-next"></div>  <div class="swiper-button-prev"></div></swiper><div *ngFor="let videoCategory of videoCategories">  <md-toolbar>{{videoCategory.title}}</md-toolbar>  <md-grid-list cols="3" rowHeight="1:1">    <md-grid-tile *ngFor="let video of videoCategory.videos">      <md-card>        <md-card-header>          <md-card-title class="youtube-video-title">{{video.title}}</md-card-title>          <md-card-subtitle>{{video.channelTitle}}</md-card-subtitle>        </md-card-header>        <md-card-content>          <a [routerLink]="[\'/video\', video.videoId]"><img class="youtube-video-image" [src]="video.thumbnailUrlMedium"></a>          <p>            Views: {{video.statisticViewCount}} | Duration: {{video.duration}}          </p>        </md-card-content>      </md-card>    </md-grid-tile>  </md-grid-list></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'angular-material-starter-kit'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'FooterComponent', 'selector': 'oas-footer'},{'name': 'HeaderComponent', 'selector': 'oas-header'},{'name': 'HomeComponent', 'selector': 'oas-home'},{'name': 'SearchComponent', 'selector': 'oas-search'},{'name': 'SettingsSidenavComponent', 'selector': 'oas-settings-sidenav'},{'name': 'YoutubePlayerComponent', 'selector': 'oas-youtube-player'}];
+        var COMPONENT_TEMPLATE = '<div><swiper [config]="swiperConfig">  <div class="swiper-wrapper">    <div class="swiper-slide" *ngFor="let video of swiperList">      <a [routerLink]="[\'/video\', video.videoId]"><img [src]="video.thumbnailUrlHigh"></a>    </div>  </div>  <!-- Add Pagination -->  <div class="swiper-pagination"></div>  <!-- Add Arrows -->  <div class="swiper-button-next"></div>  <div class="swiper-button-prev"></div></swiper><div *ngFor="let videoCategory of videoCategories">  <md-toolbar>{{videoCategory.title}}</md-toolbar>    <div fxLayout="row" fxLayoutAlign="space-between center" class="videos-container">      <md-card *ngFor="let video of videoCategory.videos" class="video-item">        <md-card-header>          <md-card-title class="youtube-video-title">{{video.title}}</md-card-title>          <md-card-subtitle>{{video.channelTitle}}</md-card-subtitle>        </md-card-header>        <md-card-content>          <a [routerLink]="[\'/video\', video.videoId]"><img class="youtube-video-image" [src]="video.thumbnailUrlMedium"></a>          <p>Views: {{video.statisticViewCount}} | Duration: {{video.duration}}</p>        </md-card-content>      </md-card>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'angular-material-starter-kit'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'CreditsComponent', 'selector': 'oas-credits'},{'name': 'FooterComponent', 'selector': 'oas-footer'},{'name': 'HeaderComponent', 'selector': 'oas-header'},{'name': 'HomeComponent', 'selector': 'oas-home'},{'name': 'SearchComponent', 'selector': 'oas-search'},{'name': 'SettingsSidenavComponent', 'selector': 'oas-settings-sidenav'},{'name': 'YoutubePlayerComponent', 'selector': 'oas-youtube-player'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
 </script>

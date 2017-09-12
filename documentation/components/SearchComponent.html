@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>rms-embedded-oas documentation</title>
+        <title>angular-material-starter-kit documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">rms-embedded-oas documentation</a>
+            <a href="../" class="navbar-brand">angular-material-starter-kit documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -26,7 +26,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="../index.html">rms-embedded-oas documentation</a>
+                        <a href="../index.html">angular-material-starter-kit documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -110,6 +110,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/BigInputComponent.html" >BigInputComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CreditsComponent.html" >CreditsComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/FooterComponent.html" >FooterComponent</a>
@@ -258,7 +261,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="../index.html">rms-embedded-oas documentation</a>
+                               <a href="../index.html">angular-material-starter-kit documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -345,6 +348,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/BigInputComponent.html" >BigInputComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CreditsComponent.html" >CreditsComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/FooterComponent.html" >FooterComponent</a>
@@ -1266,34 +1272,33 @@ export class SearchComponent implements OnInit, OnDestroy {
     </div>
 
     <div class="tab-pane fade" id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;md-paginator [length]&#x3D;&quot;videoList.length&quot; [pageSize]&#x3D;&quot;pageSize&quot; [pageSizeOptions]&#x3D;&quot;pageSizeOptions&quot; (page)&#x3D;&quot;pageEvent &#x3D; $event&quot;&gt;&lt;/md-paginator&gt;
-&lt;md-grid-list cols&#x3D;&quot;2&quot; rowHeight&#x3D;&quot;3:1&quot;&gt;
-  &lt;md-grid-tile *ngFor&#x3D;&quot;let video of videoList | slice: paginationFrom(pageEvent) : paginationTo(pageEvent)&quot;&gt;
-    &lt;md-card class&#x3D;&quot;search-card&quot; ngClass&#x3D;&quot;animationOnComponentEnter&quot;&gt;
-      &lt;md-card-content&gt;
-        &lt;md-card-title-group&gt;
-          &lt;md-card-title&gt;
-            &lt;span class&#x3D;&quot;search-video-title&quot;&gt;
-              &lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;{{video.title}}&lt;/a&gt;
-            &lt;/span&gt;
-          &lt;/md-card-title&gt;
-          &lt;md-card-subtitle&gt;
-            &lt;span class&#x3D;&quot;search-video-channel&quot;&gt;
-              &lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;{{video.channelTitle}}&lt;/a&gt;
-            &lt;/span&gt;
-            &lt;br /&gt;
-            &lt;span&gt;
-              &lt;a class&#x3D;&quot;search-video-description&quot; [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;{{video.description}}&lt;/a&gt;
-            &lt;/span&gt;
-          &lt;/md-card-subtitle&gt;
-          &lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;
-            &lt;img class&#x3D;&quot;search-image&quot; [src]&#x3D;&quot;video.thumbnailUrlMedium&quot;&gt;
-          &lt;/a&gt;
-        &lt;/md-card-title-group&gt;
-      &lt;/md-card-content&gt;
-    &lt;/md-card&gt;
-  &lt;/md-grid-tile&gt;
-&lt;/md-grid-list&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;md-paginator class&#x3D;&quot;paginator&quot; [length]&#x3D;&quot;videoList.length&quot; [pageSize]&#x3D;&quot;pageSize&quot; [pageSizeOptions]&#x3D;&quot;pageSizeOptions&quot; (page)&#x3D;&quot;pageEvent &#x3D; $event&quot;&gt;&lt;/md-paginator&gt;
+&lt;md-card *ngFor&#x3D;&quot;let video of videoList | slice: paginationFrom(pageEvent) : paginationTo(pageEvent)&quot; class&#x3D;&quot;search-card&quot; ngClass&#x3D;&quot;animationOnComponentEnter&quot;&gt;
+  &lt;md-card-content&gt;
+    &lt;md-card-title-group&gt;
+      &lt;md-card-title&gt;
+        &lt;span class&#x3D;&quot;search-video-title&quot;&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;{{video.title}}&lt;/a&gt;
+        &lt;/span&gt;
+      &lt;/md-card-title&gt;
+      &lt;md-card-subtitle&gt;
+        &lt;span&gt;
+          &lt;a class&#x3D;&quot;search-video-description&quot; [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;{{video.description}}&lt;/a&gt;
+        &lt;/span&gt;
+      &lt;/md-card-subtitle&gt;
+      &lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;&lt;img class&#x3D;&quot;search-image&quot; [src]&#x3D;&quot;video.thumbnailUrlHigh&quot;&gt;&lt;/a&gt;
+    &lt;/md-card-title-group&gt;
+    &lt;md-card-actions&gt;
+      &lt;md-chip-list&gt;
+        &lt;md-chip color&#x3D;&quot;warn&quot; selected&#x3D;&quot;true&quot;&gt;
+          &lt;span class&#x3D;&quot;search-video-channel&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/video&#x27;, video.videoId]&quot;&gt;Channel: {{video.channelTitle}}&lt;/a&gt;&lt;/span&gt;
+        &lt;/md-chip&gt;
+        &lt;md-chip color&#x3D;&quot;accent&quot; selected&#x3D;&quot;true&quot;&gt;&lt;span class&#x3D;&quot;search-video-channel&quot;&gt;{{video.publishedAt}}&lt;/span&gt;&lt;/md-chip&gt;
+      &lt;/md-chip-list&gt;
+    &lt;/md-card-actions&gt;
+  &lt;/md-card-content&gt;
+&lt;/md-card&gt;
+&lt;md-paginator class&#x3D;&quot;paginator&quot; [length]&#x3D;&quot;videoList.length&quot; [pageSize]&#x3D;&quot;pageSize&quot; [pageSizeOptions]&#x3D;&quot;pageSizeOptions&quot; (page)&#x3D;&quot;pageEvent &#x3D; $event&quot;&gt;&lt;/md-paginator&gt;
 </code></pre>
     </div>
 
@@ -1320,8 +1325,8 @@ export class SearchComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><md-paginator [length]="videoList.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event"></md-paginator><md-grid-list cols="2" rowHeight="3:1">  <md-grid-tile *ngFor="let video of videoList | slice: paginationFrom(pageEvent) : paginationTo(pageEvent)">    <md-card class="search-card" ngClass="animationOnComponentEnter">      <md-card-content>        <md-card-title-group>          <md-card-title>            <span class="search-video-title">              <a [routerLink]="[\'/video\', video.videoId]">{{video.title}}</a>            </span>          </md-card-title>          <md-card-subtitle>            <span class="search-video-channel">              <a [routerLink]="[\'/video\', video.videoId]">{{video.channelTitle}}</a>            </span>            <br />            <span>              <a class="search-video-description" [routerLink]="[\'/video\', video.videoId]">{{video.description}}</a>            </span>          </md-card-subtitle>          <a [routerLink]="[\'/video\', video.videoId]">            <img class="search-image" [src]="video.thumbnailUrlMedium">          </a>        </md-card-title-group>      </md-card-content>    </md-card>  </md-grid-tile></md-grid-list></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'angular-material-starter-kit'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'FooterComponent', 'selector': 'oas-footer'},{'name': 'HeaderComponent', 'selector': 'oas-header'},{'name': 'HomeComponent', 'selector': 'oas-home'},{'name': 'SearchComponent', 'selector': 'oas-search'},{'name': 'SettingsSidenavComponent', 'selector': 'oas-settings-sidenav'},{'name': 'YoutubePlayerComponent', 'selector': 'oas-youtube-player'}];
+        var COMPONENT_TEMPLATE = '<div><md-paginator class="paginator" [length]="videoList.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event"></md-paginator><md-card *ngFor="let video of videoList | slice: paginationFrom(pageEvent) : paginationTo(pageEvent)" class="search-card" ngClass="animationOnComponentEnter">  <md-card-content>    <md-card-title-group>      <md-card-title>        <span class="search-video-title">          <a [routerLink]="[\'/video\', video.videoId]">{{video.title}}</a>        </span>      </md-card-title>      <md-card-subtitle>        <span>          <a class="search-video-description" [routerLink]="[\'/video\', video.videoId]">{{video.description}}</a>        </span>      </md-card-subtitle>      <a [routerLink]="[\'/video\', video.videoId]"><img class="search-image" [src]="video.thumbnailUrlHigh"></a>    </md-card-title-group>    <md-card-actions>      <md-chip-list>        <md-chip color="warn" selected="true">          <span class="search-video-channel"><a [routerLink]="[\'/video\', video.videoId]">Channel: {{video.channelTitle}}</a></span>        </md-chip>        <md-chip color="accent" selected="true"><span class="search-video-channel">{{video.publishedAt}}</span></md-chip>      </md-chip-list>    </md-card-actions>  </md-card-content></md-card><md-paginator class="paginator" [length]="videoList.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event"></md-paginator></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'angular-material-starter-kit'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'CreditsComponent', 'selector': 'oas-credits'},{'name': 'FooterComponent', 'selector': 'oas-footer'},{'name': 'HeaderComponent', 'selector': 'oas-header'},{'name': 'HomeComponent', 'selector': 'oas-home'},{'name': 'SearchComponent', 'selector': 'oas-search'},{'name': 'SettingsSidenavComponent', 'selector': 'oas-settings-sidenav'},{'name': 'YoutubePlayerComponent', 'selector': 'oas-youtube-player'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SearchComponent'};
 </script>
