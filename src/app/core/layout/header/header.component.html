@@ -36,7 +36,9 @@
                     <span>Disable alerts</span>
                   </button>
                 </md-menu>
-                <button md-raised-button color="accent" class="signin">SIGN IN</button>
+                <button md-mini-fab color="accent" (click)="openDialog()">
+                  <md-icon [class.md-light]="true">person</md-icon>
+                </button>
               </div>
             </div>
           </md-toolbar>

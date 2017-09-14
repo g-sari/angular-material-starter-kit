@@ -1,7 +1,7 @@
 import 'hammerjs';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {APP_ROUTING_MODULE} from "./app-routing.module";
@@ -15,20 +15,24 @@ import {YoutubeSafeUrlPipe} from "./shared/youtube/YoutubeSafeUrlPipe";
 import {YoutubeAPIService} from "./shared/youtube/youtube-api.service";
 import {YoutubeInteractionService} from "./shared/youtube/youtube-interaction.service";
 import {Ng2Webstorage} from "ngx-webstorage";
-import { CreditsComponent } from './credits/credits.component';
+import {CreditsComponent} from './credits/credits.component';
+import {SigninDialogComponent} from "./shared/signin/signin-dialog.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     YoutubePlayerComponent,
     YoutubeSafeUrlPipe,
-    CreditsComponent
+    CreditsComponent,
+    SigninDialogComponent
   ],
+  entryComponents: [SigninDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     APP_ROUTING_MODULE,
     Ng2Webstorage,
