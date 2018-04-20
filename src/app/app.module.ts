@@ -17,6 +17,7 @@ import {YoutubeInteractionService} from "./shared/youtube/youtube-interaction.se
 import {Ng2Webstorage} from "ngx-webstorage";
 import {CreditsComponent} from './credits/credits.component';
 import {SigninDialogComponent} from "./shared/signin/signin-dialog.component";
+import { LanguagesComponent } from './shared/languages/languages.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,13 @@ import {SigninDialogComponent} from "./shared/signin/signin-dialog.component";
     YoutubePlayerComponent,
     YoutubeSafeUrlPipe,
     CreditsComponent,
-    SigninDialogComponent
+    SigninDialogComponent,
+    LanguagesComponent
   ],
-  entryComponents: [SigninDialogComponent],
+  entryComponents: [
+    SigninDialogComponent,
+    LanguagesComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

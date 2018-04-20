@@ -63,5 +63,10 @@ export class YoutubeAPIService {
       .map(response => response.json())
   }
 
+  public getI18nLanguages(lang: string) {
+    lang = (lang != null) ? lang : "en_US";
+    return this.http.get(`https://www.googleapis.com/youtube/v3/i18nLanguages?part=snippet&hl=${lang}`);
+  }
+
 
 }

@@ -3,7 +3,8 @@ import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {
   MdToolbarModule, MdButtonModule, MdPaginatorModule, MdIconRegistry, MdIconModule,
-  MdTabsModule, MdInputModule, MdFormFieldModule, MdCardModule, MdTooltipModule, MdMenuModule, MdDialogModule
+  MdTabsModule, MdInputModule, MdFormFieldModule, MdCardModule, MdTooltipModule, MdMenuModule, MdDialogModule,
+  MdTableModule
 } from "@angular/material";
 import {RouterModule} from "@angular/router";
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -26,7 +27,8 @@ import {BigInputActionComponent} from "../../shared/components/big-input/big-inp
     MdInputModule,
     MdTooltipModule,
     MdMenuModule,
-    MdDialogModule
+    MdDialogModule,
+    MdTableModule
   ],
   declarations: [
     HeaderComponent,
@@ -43,7 +45,8 @@ import {BigInputActionComponent} from "../../shared/components/big-input/big-inp
     FooterComponent,
     MdButtonModule,
     MdInputModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdTableModule
   ],
   schemas: []
 })

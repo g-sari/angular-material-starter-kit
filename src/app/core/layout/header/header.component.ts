@@ -3,6 +3,7 @@ import {NavLink} from "../navigation-link";
 import {Router} from "@angular/router";
 import {SigninDialogComponent} from "../../../shared/signin/signin-dialog.component";
 import {MdDialog} from "@angular/material";
+import {LanguagesComponent} from "../../../shared/languages/languages.component";
 
 
 @Component({
@@ -51,6 +52,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+
+  openLanguagesDialog(): void {
+    let dialogRef = this.dialog.open(LanguagesComponent,{
+       width: '30vw',
+       height: '82vh',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The languages dialog was closed');
     });
   }
 
