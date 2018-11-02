@@ -12,6 +12,7 @@ Angular Flex-Layout
 
 ## Live demo
 https://g-sari.github.io/angular-material-starter-kit
+![demo](demo.png)
 
 ## Installation
 If you don’t have already installed Node.js and angular-cli, follow following instructions.
